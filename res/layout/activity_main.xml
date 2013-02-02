@@ -4,12 +4,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    
     <RelativeLayout
-        android:id="@+id/ListFragment"
+        android:id="@+id/ListContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    
-    
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/ListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_toRightOf="@id/ListContainer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="#ccc" >
+
+        <RelativeLayout
+            android:id="@+id/ContentFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
 
 </RelativeLayout>
