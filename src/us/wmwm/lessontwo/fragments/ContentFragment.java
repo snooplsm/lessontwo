@@ -24,6 +24,22 @@ public class ContentFragment extends Fragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+		
+		Bundle args = getArguments();
+		
+		if(args!=null) {
+			String text = args.getString("text");
+			content.setText(text);
+		}
+		
+	}
+	
+	public static ContentFragment newInstance(String text) {
+		Bundle bundle = new Bundle();
+		bundle.putString("text", text);
+		ContentFragment cf = new ContentFragment();
+		cf.setArguments(bundle);
+		return cf;
 	}
 
 	public void setData(String number) {
