@@ -1,7 +1,9 @@
 package us.wmwm.lessontwo;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 public class SmallTabletActivity extends FragmentActivity {
@@ -14,6 +16,20 @@ public class SmallTabletActivity extends FragmentActivity {
 		super.onCreate(arg0);
 		setContentView(R.layout.activity_small_tablet);
 		pager = (ViewPager) findViewById(R.id.pager);
+		
+		pager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+			
+			@Override
+			public int getCount() {
+				// TODO Auto-generated method stub
+				return 10;
+			}
+			
+			@Override
+			public Fragment getItem(int arg0) {
+				return null;
+			}
+		});
 	}
 	
 }
