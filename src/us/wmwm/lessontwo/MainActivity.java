@@ -2,7 +2,7 @@ package us.wmwm.lessontwo;
 
 import us.wmwm.lessontwo.fragments.ContentFragment;
 import us.wmwm.lessontwo.fragments.ListFragment;
-import android.content.res.Configuration;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -20,6 +20,14 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		if(!false) {
+			
+			Intent i = new Intent(this, SmallTabletActivity.class);
+			startActivity(i);
+			finish();
+			return;
+		}
 		
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 		listFragment = new ListFragment();

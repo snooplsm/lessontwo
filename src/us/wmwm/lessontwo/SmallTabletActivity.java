@@ -1,5 +1,6 @@
 package us.wmwm.lessontwo;
 
+import us.wmwm.lessontwo.fragments.ContentFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -27,7 +28,9 @@ public class SmallTabletActivity extends FragmentActivity {
 			
 			@Override
 			public Fragment getItem(int position) {
-				return null;
+				
+				String text = String.valueOf(position);
+				return ContentFragment.newInstance(text);
 			}
 		});
 	}
