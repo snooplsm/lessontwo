@@ -2,8 +2,10 @@ package us.wmwm.lessontwo;
 
 import us.wmwm.lessontwo.fragments.ContentFragment;
 import us.wmwm.lessontwo.fragments.ListFragment;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,9 +21,20 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		listFragment = (ListFragment) getSupportFragmentManager().findFragmentById(R.id.ListFragment);
-		contentFragment = (ContentFragment) getSupportFragmentManager().findFragmentById(R.id.ContentFragment);
-
+		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+		listFragment = new ListFragment();
+		
+		
+		ft.replace(R.id.ListFragment, listFragment);
+		
+		if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+			contentFragment = new ContentFragment();
+			ft.replace(R.id.ContentFragment, contentFragment);
+		}
+		
+		ft.commit();
+		
+		
 		listFragment.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapter, View view, int position,
