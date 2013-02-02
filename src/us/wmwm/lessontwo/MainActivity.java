@@ -27,8 +27,8 @@ public class MainActivity extends FragmentActivity {
 		
 		ft.replace(R.id.ListFragment, listFragment);
 		
-		
-		if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+		View content = findViewById(R.id.ContentFragment);
+		if(content!=null) {
 			contentFragment = new ContentFragment();
 			ft.replace(R.id.ContentFragment, contentFragment);
 		}
