@@ -1,5 +1,6 @@
 package us.wmwm.lessontwo.fragments;
 
+import android.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -27,26 +28,26 @@ public class ListFragment extends Fragment {
 
 			@Override
 			public int getCount() {
-				// TODO Auto-generated method stub
-				return 0;
+				return 100;
 			}
 
 			@Override
-			public Object getItem(int position) {
-				// TODO Auto-generated method stub
-				return null;
+			public String getItem(int position) {
+				return String.valueOf(position);
 			}
 
 			@Override
 			public long getItemId(int position) {
-				// TODO Auto-generated method stub
 				return 0;
 			}
 
 			@Override
-			public View getView(int position, View convertView, ViewGroup parent) {
-				// TODO Auto-generated method stub
-				return null;
+			public View getView(int position, View convertView, ViewGroup parent) {				
+				if(convertView==null) {
+					convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.simple_list_item_1, null);
+				}
+				
+				return convertView;
 			}
 			
 			
