@@ -25,5 +25,10 @@ public class ContentFragment extends Fragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 	}
+
+	public void setData(String number) {
+		// TODO Auto-generated method stub
+		content.setText(number);
+	}
 	
 }
