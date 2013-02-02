@@ -18,6 +18,11 @@ public class MainActivity extends FragmentActivity {
 		
 		listFragment = (ListFragment) getSupportFragmentManager().findFragmentById(R.id.ListFragment);
 		contentFragment = (ContentFragment) getSupportFragmentManager().findFragmentById(R.id.ContentFragment);
+		
+
+		
+		
+		
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 public class ListFragment extends Fragment {
 
 	ListView list;
+	
+	OnItemClickListener onItemClickListener;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,6 +60,12 @@ public class ListFragment extends Fragment {
 			
 		});
 		
+		list.setOnItemClickListener(onItemClickListener);
+		
+	}
+	
+	public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+		this.onItemClickListener = onItemClickListener;
 	}
 	
 	public static class ViewHolder {
