@@ -27,6 +27,11 @@ public class SmallTabletActivity extends FragmentActivity {
 			}
 			
 			@Override
+			public CharSequence getPageTitle(int position) {
+				return String.valueOf(position);
+			}
+			
+			@Override
 			public Fragment getItem(int position) {
 				
 				String text = String.valueOf(position);
