@@ -4,15 +4,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <fragment
+    <RelativeLayout
         android:id="@+id/ListFragment"
-        android:name="us.wmwm.lessontwo.fragments.ListFragment"
         android:layout_width="200dp"
         android:layout_height="match_parent" />
 
-    <fragment
+    <RelativeLayout
         android:id="@+id/ContentFragment"
-        android:name="us.wmwm.lessontwo.fragments.ContentFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/ListFragment" />

@@ -21,7 +21,6 @@ public class MainActivity extends FragmentActivity {
 		
 		listFragment = (ListFragment) getSupportFragmentManager().findFragmentById(R.id.ListFragment);
 		contentFragment = (ContentFragment) getSupportFragmentManager().findFragmentById(R.id.ContentFragment);
-		
 
 		listFragment.setOnItemClickListener(new OnItemClickListener() {
 			@Override
@@ -35,9 +34,7 @@ public class MainActivity extends FragmentActivity {
 					System.out.println(number);
 				}
 			}
-		});
-		
-		
+		});				
 	}
 
 	@Override
