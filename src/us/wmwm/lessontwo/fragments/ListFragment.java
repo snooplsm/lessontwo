@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class ListFragment extends Fragment {
 
@@ -45,17 +46,22 @@ public class ListFragment extends Fragment {
 			public View getView(int position, View convertView, ViewGroup parent) {				
 				if(convertView==null) {
 					convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.simple_list_item_1, null);
-				}
-				
+					ViewHolder h = new ViewHolder();
+					h.text = (TextView) convertView.findViewById(android.R.id.text1);
+					convertView.setTag(h);
+				}				
+				ViewHolder h = (ViewHolder) convertView.getTag();
 				return convertView;
-			}
-			
-			
+			}						
 			
 		});
 		
 	}
 	
-	
+	public static class ViewHolder {
+		
+		public TextView text;
+		
+	}
 	
 }
