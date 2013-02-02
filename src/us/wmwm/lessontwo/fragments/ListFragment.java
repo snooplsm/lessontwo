@@ -51,6 +51,7 @@ public class ListFragment extends Fragment {
 					convertView.setTag(h);
 				}				
 				ViewHolder h = (ViewHolder) convertView.getTag();
+				h.text.setText(getItem(position));
 				return convertView;
 			}						
 			
